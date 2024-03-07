@@ -53,11 +53,12 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		String newW = word.toLowerCase();
 		int min = 1000;
 		String save = "";
 		for (int i = 0; i < dictionary.length; i++) {
-			if (levenshtein(dictionary[i], word) < min) {
-				min = levenshtein(dictionary[i], word);
+			if (levenshtein(dictionary[i], newW) < min) {
+				min = levenshtein(dictionary[i], newW);
 				save = dictionary[i];
 			}
 		}
